@@ -5,14 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Myros — Clean Your Family’s Digital Slate</title>
-  <meta name="description" content="Scan, erase, and protect your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Myros — Clean Your Family’s Digital Slate">
-  <meta property="og:description" content="Scan, erase, and protect your family's data. Built for MENA & Asia.">
-  <meta property="og:url" content="https://myros.ai/">
-  <meta property="og:image" content="https://myros.ai/og-image.jpg">
+  <meta name="description" content="Scan, erase, and monitor your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
   <link rel="icon" href="/favicon.ico">
 
   <!-- Tailwind (no build step) -->
@@ -24,10 +17,12 @@
           sans: ['-apple-system','BlinkMacSystemFont','"SF Pro Text"','Inter','system-ui','Segoe UI','Roboto','Helvetica','Arial','sans-serif']
         },
         extend: {
-          colors: {
-            ink: '#0a0a0a',
-            muted: '#6b7280',
-            line: '#e5e7eb'
+          colors: { ink:'#0a0a0a', muted:'#6b7280', line:'#e5e7eb' },
+          keyframes: {
+            fadeUp: { '0%':{opacity:0,transform:'translateY(12px)'}, '100%':{opacity:1,transform:'translateY(0)'} }
+          },
+          animation: {
+            fadeUp: 'fadeUp .6s ease forwards'
           }
         }
       }
@@ -42,9 +37,10 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
       <a href="/" class="font-semibold tracking-tight">Myros</a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-muted">
-        <a class="hover:text-ink" href="#how">How it works</a>
-        <a class="hover:text-ink" href="#why">Why families</a>
-        <a class="rounded-full border border-black/10 px-3 py-1.5 hover:bg-black hover:text-white transition" href="#waitlist">Join waitlist</a>
+        <a href="#how" class="hover:text-ink">How it works</a>
+        <a href="#testimonials" class="hover:text-ink">Testimonials</a>
+        <a href="#faq" class="hover:text-ink">FAQ</a>
+        <a href="#waitlist" class="rounded-full border border-black/10 px-3 py-1.5 hover:bg-black hover:text-white transition">Join waitlist</a>
       </nav>
     </div>
   </header>
@@ -53,24 +49,27 @@
   <section class="border-b border-line">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-6">
-        <h1 class="text-4xl md:text-5xl tracking-tight font-semibold leading-tight">
-          Your family deserves a clean digital slate
+        <!-- Punchier headline & sub-headline -->
+        <h1 class="text-4xl md:text-5xl tracking-tight font-semibold leading-tight opacity-0 will-change-transform" data-animate>
+          Clean up your family’s data. <br class="hidden sm:block" /> Keep it clean—automatically.
         </h1>
-        <p class="mt-5 text-lg text-muted max-w-xl">
-          Myros scans data brokers, risky social posts, and inbox leaks—then erases exposures and keeps watch. Built for families in MENA & Asia.
+        <p class="mt-5 text-lg text-muted max-w-xl opacity-0 will-change-transform" data-animate style="animation-delay:.08s">
+          Myros scans data brokers, risky social posts, and inbox leaks—erases exposures with proof receipts, then monitors so they don’t come back.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
+
+        <div class="mt-8 flex flex-wrap gap-3 opacity-0 will-change-transform" data-animate style="animation-delay:.16s">
           <a href="#waitlist" class="inline-flex items-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-semibold hover:bg-neutral-900 transition">Get early access</a>
           <a href="#how" class="inline-flex items-center rounded-full border border-black/10 px-5 py-2.5 text-sm font-semibold hover:bg-neutral-50 transition">See how it works</a>
         </div>
-        <div class="mt-8 flex items-center gap-4 text-sm text-muted">
-          <span class="inline-block h-2 w-2 rounded-full bg-black"></span>
+
+        <div class="mt-8 flex items-center gap-3 text-sm text-muted opacity-0 will-change-transform" data-animate style="animation-delay:.24s">
+          <span class="inline-block h-2 w-2 rounded-full bg-amber-600"></span>
           Private by design. Receipts for every deletion.
         </div>
       </div>
 
-      <!-- Hero image (grayscale, clean) -->
-      <div class="lg:col-span-6">
+      <!-- Hero image (grayscale) -->
+      <div class="lg:col-span-6 opacity-0 will-change-transform" data-animate style="animation-delay:.12s">
         <figure class="overflow-hidden rounded-2xl border border-line">
           <img
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
@@ -82,38 +81,37 @@
     </div>
   </section>
 
-  <!-- STRIP (simple 3-up features) -->
+  <!-- VALUE STRIP -->
   <section id="why" class="border-b border-line">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-base font-semibold tracking-tight">Family-ready</h3>
-          <p class="mt-2 text-sm text-muted">One dashboard for parents and kids. Add members, manage roles, stay in sync.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-semibold tracking-tight">Regional coverage</h3>
-          <p class="mt-2 text-sm text-muted">Local opt-out workflows and languages across MENA & Asia.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-semibold tracking-tight">Transparent by design</h3>
-          <p class="mt-2 text-sm text-muted">Before/after proof with receipts for every deletion.</p>
-        </div>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-3 gap-8">
+      <div class="opacity-0 will-change-transform" data-animate>
+        <div class="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Family-ready</div>
+        <p class="mt-2 text-sm text-muted">One dashboard for parents and kids. Add members, manage roles, stay in sync.</p>
+      </div>
+      <div class="opacity-0 will-change-transform" data-animate style="animation-delay:.08s">
+        <div class="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Regional coverage</div>
+        <p class="mt-2 text-sm text-muted">Local opt-out workflows and languages across MENA & Asia.</p>
+      </div>
+      <div class="opacity-0 will-change-transform" data-animate style="animation-delay:.16s">
+        <div class="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Transparent by design</div>
+        <p class="mt-2 text-sm text-muted">Before/after proof with receipts for every deletion.</p>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW IT WORKS (Scan · Erase · Monitor) -->
   <section id="how" class="border-b border-line">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">How it works</h2>
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight opacity-0 will-change-transform" data-animate>How it works</h2>
+
       <div class="mt-10 grid lg:grid-cols-3 gap-8">
-        <!-- Card -->
-        <div class="space-y-3">
+        <!-- 01 · Scan -->
+        <article class="space-y-3 opacity-0 will-change-transform" data-animate>
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop"
               alt="Scan"
-              class="w-full object-cover grayscale"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
@@ -121,14 +119,15 @@
             <h3 class="mt-1 font-semibold">Find exposures</h3>
             <p class="mt-1 text-sm text-muted">We scan data brokers, public search, inbox leaks, and risky social posts.</p>
           </div>
-        </div>
-        <!-- Card -->
-        <div class="space-y-3">
+        </article>
+
+        <!-- 02 · Erase -->
+        <article class="space-y-3 opacity-0 will-change-transform" data-animate style="animation-delay:.08s">
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1551281044-8d8d0d8d0f85?q=80&w=1400&auto=format&fit=crop"
               alt="Erase"
-              class="w-full object-cover grayscale"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
@@ -136,40 +135,92 @@
             <h3 class="mt-1 font-semibold">Send verified requests</h3>
             <p class="mt-1 text-sm text-muted">We automate opt-outs & deletions, then store confirmations as receipts.</p>
           </div>
-        </div>
-        <!-- Card -->
-        <div class="space-y-3">
+        </article>
+
+        <!-- 03 · Monitor -->
+        <article class="space-y-3 opacity-0 will-change-transform" data-animate style="animation-delay:.16s">
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop"
-              alt="Protect"
-              class="w-full object-cover grayscale"
+              alt="Monitor"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
-            <div class="text-xs uppercase tracking-wider text-muted">03 · Protect</div>
+            <div class="text-xs uppercase tracking-wider text-muted">03 · Monitor</div>
             <h3 class="mt-1 font-semibold">Monitor & re-remove</h3>
-            <p class="mt-1 text-sm text-muted">Weekly monitoring with re-removal if data reappears.</p>
+            <p class="mt-1 text-sm text-muted">Weekly monitoring with re-removal if data reappears. Always-on safety.</p>
           </div>
-        </div>
+        </article>
+      </div>
+
+      <div class="mt-12 h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-0 will-change-transform" data-animate style="animation-delay:.24s"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight opacity-0 will-change-transform" data-animate>What families say</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <figure class="rounded-2xl border border-line p-6 opacity-0 will-change-transform" data-animate>
+          <blockquote class="text-[15px] leading-relaxed">
+            “Myros removed our details from 30+ broker sites in a week and gave receipts for each one.”
+          </blockquote>
+          <figcaption class="mt-3 text-sm text-muted">— Parent of 2, Dubai</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-line p-6 opacity-0 will-change-transform" data-animate style="animation-delay:.08s">
+          <blockquote class="text-[15px] leading-relaxed">
+            “I finally feel in control of what’s online about my kids. The weekly monitoring is worth it alone.”
+          </blockquote>
+          <figcaption class="mt-3 text-sm text-muted">— Mother, Singapore</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-line p-6 opacity-0 will-change-transform" data-animate style="animation-delay:.16s">
+          <blockquote class="text-[15px] leading-relaxed">
+            “Simple, calm, and transparent. The receipts made my spouse an instant believer.”
+          </blockquote>
+          <figcaption class="mt-3 text-sm text-muted">— Father, Abu Dhabi</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY (clean grid) -->
-  <section id="screens" class="border-b border-line">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">A closer look</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <figure class="overflow-hidden rounded-xl border border-line">
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop" alt="Dashboard" class="w-full object-cover grayscale" />
-        </figure>
-        <figure class="overflow-hidden rounded-xl border border-line">
-          <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1400&auto=format&fit=crop" alt="Receipts" class="w-full object-cover grayscale" />
-        </figure>
-        <figure class="overflow-hidden rounded-xl border border-line">
-          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1400&auto=format&fit=crop" alt="Monitoring" class="w-full object-cover grayscale" />
-        </figure>
+  <!-- FAQ (zero JS) -->
+  <section id="faq" class="border-b border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight opacity-0 will-change-transform" data-animate>FAQ</h2>
+      <div class="mt-8 space-y-4">
+        <details class="rounded-xl border border-line p-5 group opacity-0 will-change-transform" data-animate>
+          <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">
+            How does Myros remove data from broker sites?
+            <span class="ml-4 text-muted group-open:rotate-90 transition">›</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted">We send verified opt-out and deletion requests to data brokers, then track confirmations. Each action is logged with a receipt you can export.</p>
+        </details>
+
+        <details class="rounded-xl border border-line p-5 group opacity-0 will-change-transform" data-animate style="animation-delay:.08s">
+          <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">
+            What does “monitor” mean?
+            <span class="ml-4 text-muted group-open:rotate-90 transition">›</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted">We run weekly checks across sources we’ve cleared. If data reappears, we re-remove and add a new receipt.</p>
+        </details>
+
+        <details class="rounded-xl border border-line p-5 group opacity-0 will-change-transform" data-animate style="animation-delay:.16s">
+          <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">
+            Is this safe for children’s data?
+            <span class="ml-4 text-muted group-open:rotate-90 transition">›</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted">Yes. We minimize data, encrypt at rest/in transit, and you can request a full export or deletion any time.</p>
+        </details>
+
+        <details class="rounded-xl border border-line p-5 group opacity-0 will-change-transform" data-animate style="animation-delay:.24s">
+          <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">
+            Which countries do you support?
+            <span class="ml-4 text-muted group-open:rotate-90 transition">›</span>
+          </summary>
+          <p class="mt-3 text-sm text-muted">We’re focused on MENA & Asia first, with growing broker coverage and local workflows. Tell us your country in the waitlist.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -177,7 +228,7 @@
   <!-- CTA -->
   <section id="waitlist">
     <div class="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 py-16">
-      <div class="rounded-2xl border border-line p-8">
+      <div class="rounded-2xl border border-line p-8 opacity-0 will-change-transform" data-animate>
         <h3 class="text-xl font-semibold tracking-tight">Get early access</h3>
         <p class="mt-2 text-sm text-muted">Join the waitlist to try the private beta. We’ll invite families in small cohorts.</p>
         <form class="mt-6 flex flex-col sm:flex-row gap-3" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
@@ -200,6 +251,19 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <!-- Utilities: live year + reveal-on-scroll -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const appear = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.animation = 'fadeUp .6s ease forwards';
+          appear.unobserve(e.target);
+        }
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('[data-animate]').forEach(el=>appear.observe(el));
+  </script>
 </body>
 </html>
