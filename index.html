@@ -1,218 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
+  <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Myros — Your Family’s Clean Digital Slate</title>
-  <meta name="description" content="Myros helps parents scan, erase, and protect personal data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
+  <title>Myros — Clean Your Family’s Digital Slate</title>
+  <meta name="description" content="Scan, erase, and protect your family's data across data brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Myros — Your Family’s Clean Digital Slate">
-  <meta property="og:description" content="Scan, erase, and protect your family’s data. Built for MENA & Asia.">
+  <!-- OG / Twitter -->
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Myros — Clean Your Family’s Digital Slate">
+  <meta property="og:description" content="Scan, erase, and protect your family's data. Built for MENA & Asia.">
   <meta property="og:url" content="https://myros.ai/">
-  <meta property="og:image" content="https://myros.ai/og-image.png">
+  <meta property="og:image" content="https://myros.ai/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Myros — Your Family’s Clean Digital Slate">
-  <meta name="twitter:description" content="Scan, erase, and protect your family’s data.">
-  <meta name="twitter:image" content="https://myros.ai/og-image.png">
+  <meta name="twitter:image" content="https://myros.ai/og-image.jpg">
 
-  <!-- Favicon (swap with your own) -->
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico">
 
-  <!-- TailwindCSS via CDN (no build step) -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
+        fontFamily: { display: ["Plus Jakarta Sans", "system-ui", "sans-serif"], body: ["Inter","system-ui","sans-serif"] },
         extend: {
           colors: {
-            ink: "#0b1220",
-            muted: "#667085",
-            line: "#e5e7eb",
-            soft: "#f9fafb",
+            ink: "#0b1120",
+            slateInk: "#111827",
             brand: {
-              600: "#0b1220",
-              700: "#070d18"
-            }
+              50: "#eff6ff",
+              100: "#dbeafe",
+              200: "#bfdbfe",
+              300: "#93c5fd",
+              400: "#60a5fa",
+              500: "#3b82f6",
+              600: "#2563eb",
+              700: "#1d4ed8",
+              800: "#1e40af",
+              900: "#1e3a8a"
+            },
+            cyanBrand: "#22d3ee",
+            soft: "#f8fafc",
+            line: "#e5e7eb",
+          },
+          boxShadow: {
+            card: "0 10px 30px -10px rgba(2, 6, 23, 0.25)"
           }
         }
       }
     }
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}</style>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
+    .display{font-family: "Plus Jakarta Sans", system-ui, sans-serif}
+    /* simple fade-up on scroll */
+    .reveal{opacity:0; transform: translateY(16px); transition:.6s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+  </style>
 
-  <!-- Schema (Organization) -->
+  <!-- Schema -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Myros",
-    "url":"https://myros.ai",
-    "logo":"https://myros.ai/logo.png",
-    "sameAs":[]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Myros","url":"https://myros.ai","logo":"https://myros.ai/logo.png"}
   </script>
 </head>
-<body class="bg-white text-ink">
+<body class="bg-white text-slateInk">
 
-  <!-- Nav -->
-  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-line">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 font-semibold">
-        <span class="h-3.5 w-3.5 rounded-md bg-ink inline-block"></span>
+  <!-- Decorative background blobs -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-36 -left-24 h-[36rem] w-[36rem] rounded-full bg-brand-200 blur-3xl opacity-60"></div>
+    <div class="absolute top-40 -right-10 h-[30rem] w-[30rem] rounded-full bg-cyanBrand/40 blur-3xl opacity-70"></div>
+    <div class="absolute bottom-[-10rem] left-1/4 h-[28rem] w-[28rem] rounded-full bg-brand-400/40 blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-semibold display text-lg">
+        <span class="h-4 w-4 rounded-md bg-gradient-to-br from-brand-500 to-brand-700 inline-block"></span>
         Myros
       </a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm text-muted">
-        <a href="#how" class="hover:text-ink">How it works</a>
-        <a href="#why" class="hover:text-ink">Why families</a>
-        <a href="#waitlist" class="inline-flex items-center px-3.5 py-2 rounded-xl bg-ink text-white font-semibold hover:bg-brand-700">Join waitlist</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+        <a href="#how" class="hover:text-brand-700">How it works</a>
+        <a href="#why" class="hover:text-brand-700">Why families</a>
+        <a href="#gallery" class="hover:text-brand-700">Screens</a>
+        <a href="#waitlist" class="inline-flex items-center rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 px-4 py-2 font-semibold text-white shadow hover:from-brand-700 hover:to-brand-800">Join waitlist</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/5 to-transparent"></div>
-    <div class="mx-auto max-w-6xl px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl/tight md:text-5xl/tight font-bold">
+  <!-- HERO -->
+  <section class="relative">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs text-brand-700">
+          <span class="h-2 w-2 rounded-full bg-brand-600"></span> Private by design • Proof receipts for every action
+        </div>
+        <h1 class="display mt-4 text-4xl leading-tight md:text-5xl bg-gradient-to-b from-brand-700 to-brand-900 bg-clip-text text-transparent">
           Your family deserves a clean digital slate
         </h1>
-        <p class="mt-4 text-lg text-muted max-w-xl">
-          Myros helps parents scan, erase, and monitor personal data across data brokers, risky social posts, and inbox leaks. Built for families in MENA and Asia.
+        <p class="mt-4 text-lg text-slate-600 max-w-xl">
+          Scan, erase, and protect personal data across data brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#waitlist" class="inline-flex items-center px-4 py-2.5 rounded-xl bg-ink text-white font-semibold hover:bg-brand-700">Get early access</a>
-          <a href="#how" class="inline-flex items-center px-4 py-2.5 rounded-xl border border-line text-ink hover:bg-soft">See how it works</a>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#waitlist" class="inline-flex items-center rounded-xl bg-gradient-to-r from-brand-600 via-brand-600 to-cyanBrand px-5 py-3 font-semibold text-white shadow hover:shadow-lg transition">Get early access</a>
+          <a href="#how" class="inline-flex items-center rounded-xl border border-line bg-white px-5 py-3 font-semibold text-ink hover:bg-soft">See how it works</a>
         </div>
-        <!-- Trust bar -->
-        <div class="mt-8 flex items-center gap-4 text-sm text-muted">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.5"/></svg>
-          Private by design • Proof receipts for every action
+
+        <!-- Logos / trust -->
+        <div class="mt-10 grid grid-cols-3 sm:grid-cols-5 gap-6 opacity-80">
+          <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec1b6aa?q=80&w=400&auto=format&fit=crop" alt="" class="h-8 w-auto object-contain grayscale" />
+          <img src="https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=400&auto=format&fit=crop" alt="" class="h-8 w-auto object-contain grayscale" />
+          <img src="https://images.unsplash.com/photo-1549921296-3a6b3f5b5c9a?q=80&w=400&auto=format&fit=crop" alt="" class="h-8 w-auto object-contain grayscale" />
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=400&auto=format&fit=crop" alt="" class="h-8 w-auto object-contain grayscale" />
+          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400&auto=format&fit=crop" alt="" class="h-8 w-auto object-contain grayscale" />
         </div>
       </div>
 
-      <!-- Card preview -->
-      <div class="rounded-2xl border border-line p-5 bg-white shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="text-sm font-semibold">Family privacy snapshot</div>
-          <div class="text-xs text-muted">Preview</div>
-        </div>
-        <div class="mt-3 h-2 rounded-full bg-gray-100 overflow-hidden">
-          <div class="h-full w-2/3 bg-ink"></div>
-        </div>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="rounded-xl border border-line p-4">
-            <div class="h-3 w-3 rounded bg-ink"></div>
-            <div class="mt-2 font-semibold text-sm">Broker removals</div>
-            <div class="text-sm text-muted">12 pending, 34 done</div>
-          </div>
-          <div class="rounded-xl border border-line p-4">
-            <div class="h-3 w-3 rounded bg-ink"></div>
-            <div class="mt-2 font-semibold text-sm">Social audit</div>
-            <div class="text-sm text-muted">2 risky posts flagged</div>
-          </div>
-          <div class="rounded-xl border border-line p-4">
-            <div class="h-3 w-3 rounded bg-ink"></div>
-            <div class="mt-2 font-semibold text-sm">Inbox hygiene</div>
-            <div class="text-sm text-muted">48 unsubscribed</div>
-          </div>
-          <div class="rounded-xl border border-line p-4">
-            <div class="h-3 w-3 rounded bg-ink"></div>
-            <div class="mt-2 font-semibold text-sm">Receipts</div>
-            <div class="text-sm text-muted">Proof stored safely</div>
+      <!-- Phone mock / hero art -->
+      <div class="lg:col-span-6">
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="absolute -inset-2 rounded-3xl bg-gradient-to-br from-brand-300 via-cyanBrand/50 to-brand-500 blur-2xl opacity-60"></div>
+          <div class="relative rounded-[2rem] bg-white shadow-card ring-1 ring-white/70 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Myros dashboard preview" class="w-full aspect-[9/16] object-cover" />
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
+              <div class="text-sm">Family privacy snapshot</div>
+              <div class="mt-1 h-2 rounded-full bg-white/30 overflow-hidden">
+                <div class="h-full w-2/3 bg-white/90"></div>
+              </div>
+              <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+                <div class="rounded-lg bg-white/10 px-3 py-2">Broker removals: <strong>34</strong></div>
+                <div class="rounded-lg bg-white/10 px-3 py-2">Social flags: <strong>2</strong></div>
+                <div class="rounded-lg bg-white/10 px-3 py-2">Inbox unsub: <strong>48</strong></div>
+                <div class="rounded-lg bg-white/10 px-3 py-2">Receipts: <strong>Saved</strong></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- How it works -->
-  <section id="how" class="bg-soft">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="text-2xl font-bold">How it works</h2>
-      <p class="mt-2 text-muted">Three simple steps. Clear progress. Evidence for every action.</p>
+  <!-- FEATURE STRIP -->
+  <section class="py-14 bg-soft border-y border-line" id="why">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="display text-2xl md:text-3xl font-extrabold">Why families choose Myros</h2>
+      <p class="mt-2 text-slate-600 max-w-2xl">Built for real life: add spouse and kids, local workflows for MENA & Asia, and receipts for every action.</p>
+
       <div class="mt-8 grid md:grid-cols-3 gap-4">
-        <div class="rounded-2xl border border-line bg-white p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
-          <h3 class="mt-3 font-semibold">Scan</h3>
-          <p class="mt-1 text-sm text-muted">Find exposures across broker sites, public search, inbox leaks, and risky social posts.</p>
+        <div class="reveal rounded-2xl border border-brand-200 bg-white/90 p-6 shadow-sm">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700"></div>
+          <h3 class="mt-3 font-semibold">Family-ready</h3>
+          <p class="mt-1 text-sm text-slate-600">One dashboard for parents and kids. Add members, manage roles, stay in sync.</p>
         </div>
-        <div class="rounded-2xl border border-line bg-white p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
-          <h3 class="mt-3 font-semibold">Erase</h3>
-          <p class="mt-1 text-sm text-muted">We send and track opt-outs and deletion requests, then store confirmations as receipts.</p>
-        </div>
-        <div class="rounded-2xl border border-line bg-white p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
-          <h3 class="mt-3 font-semibold">Protect</h3>
-          <p class="mt-1 text-sm text-muted">We monitor weekly and re-remove if data reappears. One dashboard for your family.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why -->
-  <section id="why">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="text-2xl font-bold">Why families choose Myros</h2>
-      <div class="mt-8 grid md:grid-cols-2 gap-4">
-        <div class="rounded-2xl border border-line p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
-          <h3 class="mt-3 font-semibold">Family ready</h3>
-          <p class="mt-1 text-sm text-muted">Add spouse and kids. Manage everything in one place.</p>
-        </div>
-        <div class="rounded-2xl border border-line p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
+        <div class="reveal rounded-2xl border border-brand-200 bg-white/90 p-6 shadow-sm delay-100">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-cyanBrand to-brand-600"></div>
           <h3 class="mt-3 font-semibold">Regional coverage</h3>
-          <p class="mt-1 text-sm text-muted">Built for MENA & Asia with local workflows.</p>
+          <p class="mt-1 text-sm text-slate-600">Local opt-out workflows and languages across MENA & Asia.</p>
         </div>
-        <div class="rounded-2xl border border-line p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
-          <h3 class="mt-3 font-semibold">Inbox hygiene</h3>
-          <p class="mt-1 text-sm text-muted">Bulk unsubscribe and breach alerts included.</p>
-        </div>
-        <div class="rounded-2xl border border-line p-6">
-          <div class="h-4 w-4 rounded-md bg-ink"></div>
+        <div class="reveal rounded-2xl border border-brand-200 bg-white/90 p-6 shadow-sm delay-200">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700"></div>
           <h3 class="mt-3 font-semibold">Transparent by design</h3>
-          <p class="mt-1 text-sm text-muted">Before & after proof with easy exports.</p>
+          <p class="mt-1 text-sm text-slate-600">Before/after proof with exported receipts for every deletion.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Waitlist -->
-  <section id="waitlist" class="bg-soft">
-    <div class="mx-auto max-w-2xl px-4 py-16">
-      <div class="rounded-2xl border border-line bg-white p-8">
-        <h3 class="text-xl font-bold">Get early access</h3>
-        <p class="mt-1 text-muted">Join the waitlist to try the private beta. We’ll invite families in small cohorts.</p>
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="display text-2xl md:text-3xl font-extrabold">How it works</h2>
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+        <div class="reveal rounded-2xl border border-line p-6">
+          <div class="text-brand-700 font-semibold">01 · Scan</div>
+          <h3 class="mt-2 text-xl font-bold">Find exposures</h3>
+          <p class="mt-1 text-slate-600">We scan data brokers, public search, inbox leaks, and risky social posts.</p>
+          <img class="mt-4 rounded-xl shadow" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Scan preview">
+        </div>
+        <div class="reveal rounded-2xl border border-line p-6 delay-100">
+          <div class="text-brand-700 font-semibold">02 · Erase</div>
+          <h3 class="mt-2 text-xl font-bold">Send verified requests</h3>
+          <p class="mt-1 text-slate-600">We automate opt-outs & deletions, then store confirmations as receipts.</p>
+          <img class="mt-4 rounded-xl shadow" src="https://images.unsplash.com/photo-1551281044-8d8d0d8d0f85?q=80&w=1200&auto=format&fit=crop" alt="Erase preview">
+        </div>
+        <div class="reveal rounded-2xl border border-line p-6 delay-200">
+          <div class="text-brand-700 font-semibold">03 · Protect</div>
+          <h3 class="mt-2 text-xl font-bold">Monitor & re-remove</h3>
+          <p class="mt-1 text-slate-600">Weekly monitoring with re-removal if data reappears. Always-on safety.</p>
+          <img class="mt-4 rounded-xl shadow" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" alt="Protect preview">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / SCREENS -->
+  <section id="gallery" class="py-16 bg-soft border-y border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="display text-2xl md:text-3xl font-extrabold">A peek at the experience</h2>
+      <p class="mt-2 text-slate-600 max-w-2xl">Real screens, not just pretty words. Replace these images with your own later.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-4">
+        <img class="reveal rounded-2xl shadow-card object-cover aspect-[4/3]" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop" alt="Dashboard">
+        <img class="reveal rounded-2xl shadow-card object-cover aspect-[4/3] delay-100" src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1400&auto=format&fit=crop" alt="Removal receipts">
+        <img class="reveal rounded-2xl shadow-card object-cover aspect-[4/3] delay-200" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop" alt="Monitoring">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="py-16">
+    <div class="mx-auto max-w-3xl px-4 text-center">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs text-brand-700">What early families say</div>
+      <blockquote class="reveal mt-6 text-2xl md:text-3xl font-semibold display leading-snug">
+        “Myros got my details off 30+ broker sites in a week and gave me receipts for each one. It’s the first time I felt actually <span class="bg-gradient-to-r from-brand-600 to-cyanBrand bg-clip-text text-transparent">in control</span> of my family’s data.”
+      </blockquote>
+      <div class="reveal mt-4 text-sm text-slate-600">— Beta parent, Dubai</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="waitlist" class="py-16">
+    <div class="mx-auto max-w-3xl px-4">
+      <div class="reveal rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 shadow-card">
+        <h3 class="display text-2xl font-extrabold">Get early access</h3>
+        <p class="mt-2 text-slate-600">Join the waitlist to try the private beta. We’ll invite families in small cohorts.</p>
         <form class="mt-6 flex flex-col sm:flex-row gap-3" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
           <input class="flex-1 rounded-xl border border-line px-4 py-3" type="email" name="email" placeholder="you@example.com" required />
-          <button class="rounded-xl bg-ink px-5 py-3 font-semibold text-white hover:bg-brand-700" type="submit">Join waitlist</button>
+          <button class="rounded-xl bg-gradient-to-r from-brand-600 to-brand-800 px-5 py-3 font-semibold text-white shadow hover:shadow-lg" type="submit">Join waitlist</button>
         </form>
-        <p class="mt-2 text-xs text-muted">No spam. Unsubscribe any time.</p>
+        <p class="mt-2 text-xs text-slate-500">No spam. Unsubscribe any time.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-line">
-    <div class="mx-auto max-w-6xl px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted">
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-white/70 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-sm text-slate-600">
       <div>© <span id="y"></span> Myros.ai</div>
       <div class="flex items-center gap-4">
-        <a href="#why" class="hover:text-ink">Privacy</a>
-        <a href="#waitlist" class="hover:text-ink">Contact</a>
+        <a href="#" class="hover:text-brand-700">Privacy</a>
+        <a href="#waitlist" class="hover:text-brand-700">Contact</a>
       </div>
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <!-- Utilities -->
+  <script>
+    // live year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // simple intersection observer for reveal-on-scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }});
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
