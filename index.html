@@ -5,12 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Myros — Clean Your Family’s Digital Slate</title>
-  <meta name="description" content="Scan, erase, and protect your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
+  <meta name="description" content="Scan, erase, and monitor your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Myros — Clean Your Family’s Digital Slate">
-  <meta property="og:description" content="Scan, erase, and protect your family's data. Built for MENA & Asia.">
+  <meta property="og:description" content="Scan, erase, and monitor your family's data. Built for MENA & Asia.">
   <meta property="og:url" content="https://myros.ai/">
   <meta property="og:image" content="https://myros.ai/og-image.jpg">
   <link rel="icon" href="/favicon.ico">
@@ -25,9 +25,9 @@
         },
         extend: {
           colors: {
-            ink: '#0a0a0a',
+            ink:   '#0a0a0a',
             muted: '#6b7280',
-            line: '#e5e7eb'
+            line:  '#e5e7eb'
           }
         }
       }
@@ -63,8 +63,9 @@
           <a href="#waitlist" class="inline-flex items-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-semibold hover:bg-neutral-900 transition">Get early access</a>
           <a href="#how" class="inline-flex items-center rounded-full border border-black/10 px-5 py-2.5 text-sm font-semibold hover:bg-neutral-50 transition">See how it works</a>
         </div>
-        <div class="mt-8 flex items-center gap-4 text-sm text-muted">
-          <span class="inline-block h-2 w-2 rounded-full bg-black"></span>
+        <!-- subtle sepia accent chip -->
+        <div class="mt-8 flex items-center gap-3 text-sm text-muted">
+          <span class="inline-block h-2 w-2 rounded-full bg-amber-600"></span>
           Private by design. Receipts for every deletion.
         </div>
       </div>
@@ -82,38 +83,39 @@
     </div>
   </section>
 
-  <!-- STRIP (simple 3-up features) -->
+  <!-- STRIP -->
   <section id="why" class="border-b border-line">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
       <div class="grid md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-base font-semibold tracking-tight">Family-ready</h3>
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Family-ready</div>
           <p class="mt-2 text-sm text-muted">One dashboard for parents and kids. Add members, manage roles, stay in sync.</p>
         </div>
         <div>
-          <h3 class="text-base font-semibold tracking-tight">Regional coverage</h3>
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Regional coverage</div>
           <p class="mt-2 text-sm text-muted">Local opt-out workflows and languages across MENA & Asia.</p>
         </div>
         <div>
-          <h3 class="text-base font-semibold tracking-tight">Transparent by design</h3>
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800">Transparent by design</div>
           <p class="mt-2 text-sm text-muted">Before/after proof with receipts for every deletion.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW IT WORKS (fixed: Scan · Erase · Monitor) -->
   <section id="how" class="border-b border-line">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">How it works</h2>
+
       <div class="mt-10 grid lg:grid-cols-3 gap-8">
-        <!-- Card -->
-        <div class="space-y-3">
+        <!-- 01 · Scan -->
+        <article class="space-y-3">
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop"
               alt="Scan"
-              class="w-full object-cover grayscale"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
@@ -121,14 +123,15 @@
             <h3 class="mt-1 font-semibold">Find exposures</h3>
             <p class="mt-1 text-sm text-muted">We scan data brokers, public search, inbox leaks, and risky social posts.</p>
           </div>
-        </div>
-        <!-- Card -->
-        <div class="space-y-3">
+        </article>
+
+        <!-- 02 · Erase -->
+        <article class="space-y-3">
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1551281044-8d8d0d8d0f85?q=80&w=1400&auto=format&fit=crop"
               alt="Erase"
-              class="w-full object-cover grayscale"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
@@ -136,27 +139,31 @@
             <h3 class="mt-1 font-semibold">Send verified requests</h3>
             <p class="mt-1 text-sm text-muted">We automate opt-outs & deletions, then store confirmations as receipts.</p>
           </div>
-        </div>
-        <!-- Card -->
-        <div class="space-y-3">
+        </article>
+
+        <!-- 03 · Monitor (renamed from Protect) -->
+        <article class="space-y-3">
           <figure class="overflow-hidden rounded-xl border border-line">
             <img
               src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop"
-              alt="Protect"
-              class="w-full object-cover grayscale"
+              alt="Monitor"
+              class="w-full object-cover grayscale hover:grayscale-0 transition"
             />
           </figure>
           <div>
-            <div class="text-xs uppercase tracking-wider text-muted">03 · Protect</div>
+            <div class="text-xs uppercase tracking-wider text-muted">03 · Monitor</div>
             <h3 class="mt-1 font-semibold">Monitor & re-remove</h3>
-            <p class="mt-1 text-sm text-muted">Weekly monitoring with re-removal if data reappears.</p>
+            <p class="mt-1 text-sm text-muted">Weekly monitoring with re-removal if data reappears. Always-on safety.</p>
           </div>
-        </div>
+        </article>
       </div>
+
+      <!-- subtle sepia divider -->
+      <div class="mt-12 h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
     </div>
   </section>
 
-  <!-- GALLERY (clean grid) -->
+  <!-- GALLERY -->
   <section id="screens" class="border-b border-line">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">A closer look</h2>
