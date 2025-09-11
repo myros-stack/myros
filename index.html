@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Myros — Your family's clean digital slate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0b1220; --muted:#667085; --line:#e5e7eb; --bg:#ffffff; --soft:#f9fafb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg);}
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    .hero { padding: 80px 0; background: radial-gradient(60% 60% at 50% 0%, rgba(11,18,32,0.08), transparent); }
+    h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin: 0; }
+    p.lead { color: var(--muted); font-size: 18px; margin: 16px 0 0; max-width: 48ch; }
+    .row { display: grid; gap: 32px; grid-template-columns: 1fr; }
+    @media (min-width: 900px){ .row { grid-template-columns: 1.1fr 0.9fr; } }
+    .btn { display:inline-block; padding: 12px 18px; border-radius: 12px; text-decoration:none; font-weight:600; }
+    .btn--primary { background:var(--ink); color:#fff; }
+    .btn--ghost { border:1px solid var(--line); color:var(--ink); background:#fff; }
+    .stack { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+    .card { border:1px solid var(--line); border-radius: 18px; padding: 20px; background:#fff; }
+    .how { background:var(--soft); padding: 64px 0; }
+    .grid-3 { display:grid; gap:20px; grid-template-columns: 1fr; }
+    @media (min-width: 900px){ .grid-3 { grid-template-columns: repeat(3,1fr); } }
+    .why { padding: 64px 0; }
+    .grid-2 { display:grid; gap:20px; grid-template-columns: 1fr; }
+    @media (min-width: 900px){ .grid-2 { grid-template-columns: repeat(2,1fr); } }
+    .footer { border-top:1px solid var(--line); padding: 28px 0; color:#667085; font-size:14px; }
+    .pill { width:36px; height:36px; border-radius:10px; background:var(--ink); }
+    form.waitlist { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    input[type="email"]{ flex:1 1 260px; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; }
+  </style>
+</head>
+<body>
+
+  <header class="container" style="display:flex; align-items:center; justify-content:space-between; padding-top:18px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div class="pill"></div>
+      <strong>Myros</strong>
+    </div>
+    <nav style="display:flex; gap:18px; font-size:14px;">
+      <a href="#how" style="color:var(--muted); text-decoration:none;">How it works</a>
+      <a href="#why" style="color:var(--muted); text-decoration:none;">Why families</a>
+      <a href="#waitlist" class="btn btn--primary">Join waitlist</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container row">
+      <div>
+        <h1>Your family deserves a clean digital slate</h1>
+        <p class="lead">Myros helps parents scan, erase, and monitor personal data across data brokers, risky social posts, and inbox leaks. Built for families in MENA and Asia.</p>
+        <div class="stack">
+          <a href="#waitlist" class="btn btn--primary">Get early access</a>
+          <a href="#how" class="btn btn--ghost">See how it works</a>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-weight:600; font-size:14px;">Family privacy snapshot</div>
+          <div style="color:#98a2b3; font-size:12px;">Preview</div>
+        </div>
+        <div style="margin-top:12px; height:10px; background:#eef2f7; border-radius:8px; overflow:hidden;">
+          <div style="height:100%; width:62%; background:var(--ink)"></div>
+        </div>
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="card">
+            <div class="pill"></div>
+            <div style="margin-top:10px; font-weight:600; font-size:14px;">Broker removals</div>
+            <div style="color:var(--muted); font-size:14px;">12 pending, 34 done</div>
+          </div>
+          <div class="card">
+            <div class="pill"></div>
+            <div style="margin-top:10px; font-weight:600; font-size:14px;">Social audit</div>
+            <div style="color:var(--muted); font-size:14px;">2 risky posts flagged</div>
+          </div>
+          <div class="card">
+            <div class="pill"></div>
+            <div style="margin-top:10px; font-weight:600; font-size:14px;">Inbox hygiene</div>
+            <div style="color:var(--muted); font-size:14px;">48 unsubscribed</div>
+          </div>
+          <div class="card">
+            <div class="pill"></div>
+            <div style="margin-top:10px; font-weight:600; font-size:14px;">Receipts</div>
+            <div style="color:var(--muted); font-size:14px;">Proof stored safely</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="how">
+    <div class="container">
+      <h2 style="margin:0; font-size:28px;">How it works</h2>
+      <p class="lead" style="margin-top:6px;">Three simple steps. Clear progress. Evidence for every action.</p>
+      <div class="grid-3" style="margin-top:20px;">
+        <div class="card">
+          <div class="pill"></div>
+          <h3 style="margin:12px 0 6px;">Scan</h3>
+          <p class="lead" style="font-size:16px;">Find exposures across broker sites, public search, inbox leaks, and risky social posts.</p>
+        </div>
+        <div class="card">
+          <div class="pill"></div>
+          <h3 style="margin:12px 0 6px;">Erase</h3>
+          <p class="lead" style="font-size:16px;">We send and track opt-outs and deletion requests, then store confirmations as receipts.</p>
+        </div>
+        <div class="card">
+          <div class="pill"></div>
+          <h3 style="margin:12px 0 6px;">Protect</h3>
+          <p class="lead" style="font-size:16px;">We monitor weekly and re-remove if data reappears. One dashboard for your family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="why">
+    <div class="container">
+      <h2 style="margin:0; font-size:28px;">Why families choose Myros</h2>
+      <div class="grid-2" style="margin-top:20px;">
+        <div class="card"><div class="pill"></div><h3 style="margin:12px 0 6px;">Family ready</h3><p class="lead" style="font-size:16px;">Add spouse and kids. Manage everything in one place.</p></div>
+        <div class="card"><div class="pill"></div><h3 style="margin:12px 0 6px;">Regional coverage</h3><p class="lead" style="font-size:16px;">Built for MENA and Asia with local workflows.</p></div>
+        <div class="card"><div class="pill"></div><h3 style="margin:12px 0 6px;">Inbox hygiene</h3><p class="lead" style="font-size:16px;">Bulk unsubscribe and breach alerts included.</p></div>
+        <div class="card"><div class="pill"></div><h3 style="margin:12px 0 6px;">Transparent by design</h3><p class="lead" style="font-size:16px;">Before & after proof with easy exports.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="waitlist">
+    <div class="container card">
+      <h3 style="margin:0; font-size:22px;">Get early access</h3>
+      <p class="lead">Join the waitlist to try the private beta. We will invite families in small cohorts.</p>
+      <form class="waitlist" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required />
+        <button class="btn btn--primary" type="submit">Join waitlist</button>
+      </form>
+      <p style="color:#98a2b3; font-size:14px; margin-top:8px;">No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div>© <span id="y"></span> Myros.ai</div>
+      <div style="display:flex; gap:16px;">
+        <a href="#why" style="color:inherit; text-decoration:none;">Privacy</a>
+        <a href="#waitlist" style="color:inherit; text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
