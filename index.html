@@ -8,27 +8,24 @@
   <meta name="description" content="Scan, erase, and monitor your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
 <link rel="icon" type="image/png" href="images/icon.png">
 
-  <style>
-  /* Full-bleed divider that fades at the edges */
-  .divider-fade {
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      #cbd5e1 15%,
-      #cbd5e1 85%,
-      transparent
-    ); /* #cbd5e1 ≈ slate-300, matches your 'line' tone */
+ <style>
+  :root { --divider:#cbd5e1; } /* tweak if you want darker/lighter */
+
+  /* Bottom fade divider on a section */
+  .section-fade-b { position: relative; }
+  .section-fade-b::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:linear-gradient(to right, transparent, var(--divider) 12%, var(--divider) 88%, transparent);
   }
-  /* (optional) inset version if you want a shorter divider */
-  .divider-fade.inset {
-    max-width: 72rem;   /* ~ max-w-6xl */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;  /* ≈ px-4 */
-    padding-right: 1rem;
+
+  /* Top fade divider (use if a section needs one at the top) */
+  .section-fade-t { position: relative; }
+  .section-fade-t::before{
+    content:""; position:absolute; left:0; right:0; top:0; height:1px;
+    background:linear-gradient(to right, transparent, var(--divider) 12%, var(--divider) 88%, transparent);
   }
 </style>
+
 
   
 <!-- Tailwind (no build step) -->
@@ -73,7 +70,7 @@
   <body class="bg-white text-ink antialiased">
 
   <!-- NAV -->
-  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-line">
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur section-fade-b">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
 
     <!-- Logo + Icon -->
@@ -97,7 +94,7 @@
 
 
  <!-- HERO -->
-<section id="hero" class="border-b border-line">
+<section id="hero" class="section-fade-b">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-10 items-center">
 
     <!-- Left: copy + form -->
@@ -131,7 +128,7 @@
 </section>
 
 <!-- VALUE STRIP -->
-<section id="why" class="border-b border-line">
+<section id="why" class="section-fade-b">
   <div class="mx-auto max-w-6xl px-4 lg:px-8 py-14 grid md:grid-cols-3 gap-8">
 
     <!-- Item 1 -->
@@ -225,7 +222,7 @@
 
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="border-b border-line">
+  <section id="testimonials" class="section-fade-b">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight reveal" data-wait>What families say</h2>
       <div class="mt-8 grid md:grid-cols-3 gap-6">
@@ -252,7 +249,7 @@
   </section>
 
   <!-- FAQ (zero JS) -->
-  <section id="faq" class="border-b border-line">
+  <section id="faq" class="section-fade-b">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight reveal" data-wait>FAQ</h2>
       <div class="mt-8 space-y-4">
