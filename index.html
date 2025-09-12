@@ -8,6 +8,29 @@
   <meta name="description" content="Scan, erase, and monitor your family's data across brokers, risky social posts, and inbox leaks — built for families in MENA & Asia.">
 <link rel="icon" type="image/png" href="images/icon.png">
 
+  <style>
+  /* Full-bleed divider that fades at the edges */
+  .divider-fade {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #cbd5e1 15%,
+      #cbd5e1 85%,
+      transparent
+    ); /* #cbd5e1 ≈ slate-300, matches your 'line' tone */
+  }
+  /* (optional) inset version if you want a shorter divider */
+  .divider-fade.inset {
+    max-width: 72rem;   /* ~ max-w-6xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;  /* ≈ px-4 */
+    padding-right: 1rem;
+  }
+</style>
+
+  
 <!-- Tailwind (no build step) -->
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -194,6 +217,10 @@
     </div>
   </div>
 </section>
+
+  </section>
+<div class="divider-fade"></div>   <!-- ← soft edge-blended divider -->
+<section id="testimonials">
 
 
 
