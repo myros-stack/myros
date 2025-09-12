@@ -125,64 +125,58 @@
 </section>
 
 
-  <!-- HOW IT WORKS (Scan · Erase · Monitor) -->
-  <section id="how" class="border-b border-line">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight reveal" data-wait>How it works</h2>
+  <!-- HOW IT WORKS -->
+<section id="how" class="border-t border-line/80">
+  <div class="mx-auto max-w-6xl px-4 lg:px-8 py-16">
+    <h2 class="text-3xl md:text-4xl font-semibold text-ink mb-10">How it works</h2>
 
-      <div class="mt-10 grid lg:grid-cols-3 gap-8">
-        <!-- 01 · Scan -->
-        <article class="space-y-3 reveal" data-wait>
-          <figure class="overflow-hidden rounded-xl border border-line">
-            <img
-              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop"
-              alt="Scan"
-              class="w-full object-cover grayscale hover:grayscale-0 transition"
-            />
-          </figure>
-          <div>
-            <div class="text-xs uppercase tracking-wider text-muted">01 · Scan</div>
-            <h3 class="mt-1 font-semibold">Find exposures</h3>
-            <p class="mt-1 text-sm text-muted">We scan data brokers, public search, inbox leaks, and risky social posts.</p>
-          </div>
-        </article>
+    <div class="grid md:grid-cols-3 gap-10 items-start">
 
-        <!-- 02 · Erase -->
-        <article class="space-y-3 reveal" data-wait style="transition-delay:.08s">
-          <figure class="overflow-hidden rounded-xl border border-line">
-            <img
-              src="https://images.unsplash.com/photo-1551281044-8d8d0d8d0f85?q=80&w=1400&auto=format&fit=crop"
-              alt="Erase"
-              class="w-full object-cover grayscale hover:grayscale-0 transition"
-            />
-          </figure>
-          <div>
-            <div class="text-xs uppercase tracking-wider text-muted">02 · Erase</div>
-            <h3 class="mt-1 font-semibold">Send verified requests</h3>
-            <p class="mt-1 text-sm text-muted">We automate opt-outs & deletions, then store confirmations as receipts.</p>
-          </div>
-        </article>
+      <!-- 01 · SCAN -->
+      <article>
+        <img
+          src="/images/how-scan.jpg" alt="Scanning exposure example"
+          class="w-full h-64 object-cover rounded-2xl shadow-sm border border-line/60" />
+        <div class="mt-4 text-xs tracking-widest text-muted uppercase">01 · Scan</div>
+        <h3 class="mt-1 text-xl font-semibold text-ink">Find exposures</h3>
+        <p class="mt-2 text-muted">
+          We scan data brokers, public search, inbox leaks, and risky social posts.
+        </p>
+      </article>
 
-        <!-- 03 · Monitor -->
-        <article class="space-y-3 reveal" data-wait style="transition-delay:.16s">
-          <figure class="overflow-hidden rounded-xl border border-line">
-            <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop"
-              alt="Monitor"
-              class="w-full object-cover grayscale hover:grayscale-0 transition"
-            />
-          </figure>
-          <div>
-            <div class="text-xs uppercase tracking-wider text-muted">03 · Monitor</div>
-            <h3 class="mt-1 font-semibold">Monitor & re-remove</h3>
-            <p class="mt-1 text-sm text-muted">Weekly monitoring with re-removal if data reappears. Always-on safety.</p>
-          </div>
-        </article>
-      </div>
+      <!-- 02 · ERASE (FIXED) -->
+      <article>
+        <!-- If you DON'T have an icon, just use the label (no broken image, no pill) -->
+        <div class="text-xs tracking-widest text-muted uppercase">02 · Erase</div>
+        <h3 class="mt-1 text-xl font-semibold text-ink">Send verified requests</h3>
+        <p class="mt-2 text-muted">
+          We automate opt-outs & deletions, then store confirmations as receipts.
+        </p>
 
-      <div class="mt-12 h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent reveal" data-wait style="transition-delay:.24s"></div>
+        <!-- If you DO have an icon, uncomment this and remove the plain label above:
+        <div class="flex items-center gap-2">
+          <img src="/icons/erase.svg" alt="" class="h-5 w-5" />
+          <span class="text-xs tracking-widest text-muted uppercase">02 · Erase</span>
+        </div>
+        -->
+      </article>
+
+      <!-- 03 · MONITOR -->
+      <article>
+        <img
+          src="/images/how-monitor.jpg" alt="Monitoring servers"
+          class="w-full h-64 object-cover rounded-2xl shadow-sm border border-line/60" />
+        <div class="mt-4 text-xs tracking-widest text-muted uppercase">03 · Monitor</div>
+        <h3 class="mt-1 text-xl font-semibold text-ink">Monitor & re-remove</h3>
+        <p class="mt-2 text-muted">
+          Weekly monitoring with re-removal if data reappears. Always-on safety.
+        </p>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="border-b border-line">
