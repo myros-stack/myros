@@ -234,6 +234,27 @@
         <p class="mt-2 text-xs text-muted">No spam. Unsubscribe any time.</p>
       </div>
     </div>
+<form action="https://formspree.io/f/abcdxyz" method="POST" class="space-y-4">
+  <label for="name" class="block">
+    <span class="text-gray-700">Your Name</span>
+    <input type="text" name="name" id="name" required class="mt-1 block w-full border rounded p-2">
+  </label>
+
+  <label for="email" class="block">
+    <span class="text-gray-700">Your Email</span>
+    <input type="email" name="email" id="email" required class="mt-1 block w-full border rounded p-2">
+  </label>
+
+  <label for="message" class="block">
+    <span class="text-gray-700">Message</span>
+    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full border rounded p-2"></textarea>
+  </label>
+
+  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Send
+  </button>
+</form>
+
   </section>
 
   <!-- FOOTER -->
