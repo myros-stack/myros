@@ -29,9 +29,10 @@ export default function Navigation() {
           <a href="#how" className="hover:text-ink">How it works</a>
           <a href="#testimonials" className="hover:text-ink">Testimonials</a>
           <a href="#faq" className="hover:text-ink">FAQ</a>
-          <a href="#waitlist" className="rounded-full border border-black/10 px-3 py-1.5 hover:bg-black hover:text-white transition">
-            Join the waitlist
-          </a>
+          <Link href="/login" className="hover:text-ink">Sign in</Link>
+          <Link href="/signup" className="rounded-full border border-black/10 px-3 py-1.5 hover:bg-black hover:text-white transition">
+            Get Started
+          </Link>
         </nav>
 
       </div>

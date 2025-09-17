@@ -28,22 +28,21 @@ export default function Home() {
                 We scan people-search and data-broker sites, then erase what shouldn&apos;t be there—so your family stays private by default.
               </p>
 
-              {/* Email form */}
-              <form action="https://formspree.io/f/xzzaweqp" method="POST" className="mt-8 flex w-full max-w-md rounded-full overflow-hidden shadow-sm border border-line/60 bg-white">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                  className="flex-1 px-4 py-2 text-sm text-ink placeholder-muted focus:outline-none min-w-0"
-                />
-                <button
-                  type="submit"
-                  className="px-5 py-2 bg-black text-white font-medium rounded-r-full hover:bg-black/90 transition"
+              {/* Authentication CTAs */}
+              <div className="mt-8 flex gap-4">
+                <Link
+                  href="/signup"
+                  className="px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-black/90 transition"
                 >
-                  Join waitlist
-                </button>
-              </form>
+                  Get Started
+                </Link>
+                <Link
+                  href="/login"
+                  className="px-6 py-3 border border-black/20 text-ink font-medium rounded-full hover:bg-black/5 transition"
+                >
+                  Sign In
+                </Link>
+              </div>
             </div>
 
             {/* Right: hero image */}
@@ -201,23 +200,33 @@ export default function Home() {
                   Which countries do you support?
                   <span className="ml-4 text-muted group-open:rotate-90 transition">›</span>
                 </summary>
-                <p className="mt-3 text-sm text-muted">We&apos;re focused on MENA &amp; Asia first, with growing broker coverage and local workflows. Tell us your country in the waitlist.</p>
+                <p className="mt-3 text-sm text-muted">We&apos;re focused on MENA &amp; Asia first, with growing broker coverage and local workflows. Contact us to learn about availability in your region.</p>
               </details>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section id="waitlist">
+        <section id="cta">
           <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 py-16">
             <div className="rounded-2xl border border-line p-8 reveal bg-white" data-wait>
-              <h3 className="text-xl font-semibold tracking-tight">Get early access</h3>
-              <p className="mt-2 text-sm text-muted">Join the waitlist to try the private beta. We&apos;ll invite families in small cohorts.</p>
-              <form className="mt-6 flex flex-col sm:flex-row gap-3" action="https://formspree.io/f/xzzaweqp" method="POST">
-                <input className="flex-1 rounded-full border border-black/10 px-4 py-3" type="email" name="email" placeholder="you@example.com" required />
-                <button className="rounded-full bg-black text-white px-5 py-3 text-sm font-semibold hover:bg-neutral-900 transition" type="submit">Join waitlist</button>
-              </form>
-              <p className="mt-2 text-xs text-muted">No spam. Unsubscribe any time.</p>
+              <h3 className="text-xl font-semibold tracking-tight">Start protecting your family today</h3>
+              <p className="mt-2 text-sm text-muted">Create your account and begin safeguarding your family&apos;s digital privacy with automated monitoring and removal.</p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/signup"
+                  className="flex-1 rounded-full bg-black text-white px-5 py-3 text-sm font-semibold hover:bg-neutral-900 transition text-center"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/login"
+                  className="flex-1 rounded-full border border-black/10 text-ink px-5 py-3 text-sm font-semibold hover:bg-black/5 transition text-center"
+                >
+                  Sign In
+                </Link>
+              </div>
+              <p className="mt-2 text-xs text-muted">Secure, private, and GDPR compliant.</p>
             </div>
           </div>
         </section>
