@@ -15,8 +15,6 @@ export default function Home() {
 
         <Navigation />
 
-        <h1>TEST - CLAUDE CONNECTION WORKING</h1>
-
         {/* Hero Section */}
         <section id="hero" className="section-fade-b">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-8 lg:pb-12 pt-16 lg:pt-20 grid lg:grid-cols-12 gap-10 items-center">
